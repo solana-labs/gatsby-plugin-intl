@@ -55,8 +55,9 @@ exports.onCreatePage = async ({ page, actions }, pluginOptions) => {
     try {
       // TODO load yaml here
       const messages = require(`${path}/${language}.json`)
-
-      return flattenMessages(messages)
+      // Fallback to English
+      const englishMessages = Object.assign({}, require(`${path}/en.json`))
+      return flattenMessages(Object.assign(englishMessages, messages))
     } catch (error) {
       if (error.code === "MODULE_NOT_FOUND") {
         process.env.NODE_ENV !== "test" &&
