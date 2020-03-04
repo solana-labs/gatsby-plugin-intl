@@ -30,6 +30,7 @@ const withIntlProvider = (intl) => children => {
       locale={intl.language}
       defaultLocale={intl.defaultLanguage}
       messages={intl.messages}
+      onError={(err) => { throw new Error(err); }}
     >
       <IntlContextProvider value={intl}>{children}</IntlContextProvider>
     </IntlProvider>
