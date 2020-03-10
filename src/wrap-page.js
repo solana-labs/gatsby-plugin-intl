@@ -31,8 +31,9 @@ const withIntlProvider = (intl) => children => {
       defaultLocale={intl.defaultLanguage}
       messages={intl.messages}
       onError={(err) => {
+        console.error(err.toString());
         if (!err.toString().includes("Using default locale")) {
-          throw new Error(err);
+          // throw new Error(err);
         }
       }}
     >
