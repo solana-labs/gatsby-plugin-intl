@@ -1,4 +1,5 @@
 const webpack = require("webpack")
+const merge = require('deepmerge')
 
 function flattenMessages(nestedMessages, prefix = "") {
   return Object.keys(nestedMessages).reduce((messages, key) => {
@@ -56,8 +57,8 @@ exports.onCreatePage = async ({ page, actions }, pluginOptions) => {
       // TODO load yaml here
       const messages = require(`${path}/${language}.json`)
       // Fallback to English
-      const englishMessages = Object.assign({}, require(`${path}/en.json`))
-      return flattenMessages(Object.assign(englishMessages, messages))
+      const englishMessages = require(`${path}/en.json`)
+      return flattenMessages(merge(englishMessages, messages))
     } catch (error) {
       if (error.code === "MODULE_NOT_FOUND") {
         process.env.NODE_ENV !== "test" &&
