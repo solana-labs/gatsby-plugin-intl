@@ -7,9 +7,9 @@
     "url": "https://github.com/wiziple/gatsby-plugin-intl"
   },
   "dependencies": {
-    "@babel/runtime": "^7.8.4",
-    "@formatjs/intl-pluralrules": "^1.5.2",
-    "@formatjs/intl-relativetimeformat": "^4.5.9",
+    "@babel/runtime": "^7.9.2",
+    "@formatjs/intl-pluralrules": "^1.5.5",
+    "@formatjs/intl-relativetimeformat": "^4.5.12",
     "browser-lang": "^0.1.0",
     "deepmerge": "^4.2.2",
     "intl": "^1.2.5",
@@ -17,10 +17,10 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.4",
-    "babel-preset-gatsby-package": "^0.2.16",
+    "@babel/core": "^7.9.0",
+    "babel-preset-gatsby-package": "^0.2.18",
     "cross-env": "^7.0.0",
-    "jest": "^25.1.0",
+    "jest": "^25.3.0",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2"
   },
